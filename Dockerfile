@@ -19,7 +19,7 @@ RUN apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y --no
 	cd /tmp && curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer && \
 	rm -r /var/lib/apt/lists/*
 
-COPY conf/apache2/000-default /etc/apache2/sites-enabled/000-default
+COPY conf/apache2/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 COPY conf/php5/php.ini /etc/php5/mods-available/php.ini
 COPY scripts/hf-init.bash /root/hf-init.bash
 
