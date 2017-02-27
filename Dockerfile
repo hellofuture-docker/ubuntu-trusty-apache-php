@@ -21,8 +21,8 @@ RUN apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y --no
 
 COPY conf/apache2/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 COPY conf/php5/php.ini /etc/php5/mods-available/php.ini
-COPY scripts/hf-init.bash /root/hf-init.bash
+COPY scripts/hf-init.bash /usr/local/bin/hf-init
 
-CMD ["/bin/bash", "/root/hf-init.bash"]
+CMD ["hf-init"]
 
 EXPOSE 80
